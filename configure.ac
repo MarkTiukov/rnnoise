@@ -46,8 +46,13 @@ AC_SUBST(OP_LT_CURRENT)
 AC_SUBST(OP_LT_REVISION)
 AC_SUBST(OP_LT_AGE)
 
+#baidaev
 CC_CHECK_CFLAGS_APPEND(
-  [-O3 -march=native -pedantic -Wall -Wextra -Wno-sign-compare -Wno-parentheses -Wno-long-long])
+  [-O3 -march=native -D__SSE__ -D__SSE2__ -D__SSE3__ -D__SSSE3__ -D__SSE4_1__ -D__SSE4_2__ -D__AVX__ -msimd128 -mavx2 -pedantic -Wall -Wextra -Wno-sign-compare -Wno-parentheses -Wno-long-long])
+                                            
+
+#CC_CHECK_CFLAGS_APPEND(
+#  [-O3 -march=native -msimd128 -msse2 -pedantic -Wall -Wextra -Wno-sign-compare -Wno-parentheses -Wno-long-long])
 
 # Platform-specific tweaks
 case $host in
